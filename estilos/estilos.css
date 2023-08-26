@@ -1,0 +1,230 @@
+:root {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background-color: hsl(0, 0%, 94%);
+}
+body a {
+  text-decoration: none;
+  cursor: pointer;
+}
+body img {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20vh;
+  padding-top: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5vw 5vw 20vw 5vw;
+  background-color: hsl(0, 0%, 100%);
+}
+.container #form-container {
+  width: 90%;
+  padding-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  border-bottom: thin solid hsl(0, 1%, 44%);
+}
+.container #form-container .form-item {
+  margin-bottom: 40px;
+}
+.container #form-container .form-item .rojo {
+  color: hsl(0, 100%, 67%);
+  border-color: hsl(0, 100%, 67%);
+}
+.container #form-container .form-item .invalid-day {
+  position: absolute;
+  font-size: 2vw;
+  font-style: italic;
+  margin-top: 7px;
+  display: none;
+}
+.container #form-container .form-item .required-day {
+  position: absolute;
+  font-size: 2vw;
+  font-style: italic;
+  margin-top: 7px;
+  display: none;
+}
+.container #form-container .form-item .invalid-month {
+  position: absolute;
+  font-size: 2vw;
+  font-style: italic;
+  margin-top: 7px;
+  display: none;
+}
+.container #form-container .form-item .required-month {
+  position: absolute;
+  font-size: 2vw;
+  font-style: italic;
+  margin-top: 7px;
+  display: none;
+}
+.container #form-container .form-item .invalid-year {
+  position: absolute;
+  font-size: 2vw;
+  font-style: italic;
+  margin-top: 7px;
+  display: none;
+}
+.container #form-container .form-item .required-year {
+  position: absolute;
+  font-size: 2vw;
+  font-style: italic;
+  margin-top: 7px;
+  display: none;
+}
+.container #form-container input[type=text] {
+  width: 100%;
+  margin-top: 7px;
+  height: 6vw;
+  border-radius: 7px;
+  padding-left: 1.5vw;
+  font-weight: 800;
+  outline-style: none;
+}
+.container #form-container input[type=text]:focus {
+  border-color: hsl(259, 100%, 65%);
+}
+.container #form-container label {
+  color: hsl(0, 1%, 44%);
+  letter-spacing: 5px;
+  font-size: 2.5vw;
+}
+.container .arrow {
+  position: relative;
+  top: -25px;
+  width: 50px;
+  height: 50px;
+  background-color: hsl(259, 100%, 65%);
+  border-radius: 50%;
+  padding: 7px;
+  transition: background-color 0.3s ease;
+}
+.container .arrow:hover {
+  background-color: hsl(0, 0%, 8%);
+}
+.container .age-container {
+  width: 90%;
+  margin-left: 15px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 13vw;
+  font-style: italic;
+  font-weight: 800;
+}
+.container .age-container .value {
+  color: hsl(259, 100%, 65%);
+  font-weight: 800;
+}
+
+@media screen and (min-width: 769px) {
+  .container {
+    margin-bottom: 5rem;
+  }
+  .container #form-container .form-item {
+    margin-bottom: 0;
+  }
+  .container .age-container {
+    font-size: 6rem;
+  }
+}
+@media screen and (min-width: 892px) {
+  .container {
+    width: 60%;
+    margin-top: 10vh;
+  }
+  .container #form-container {
+    width: 70%;
+    justify-content: flex-start;
+  }
+  .container #form-container .form-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: baseline;
+  }
+  .container #form-container .form-item input[type=text] {
+    width: 70%;
+    height: 6vw;
+    font-size: 2vw;
+  }
+  .container #form-container .form-item label {
+    font-size: 1rem;
+  }
+  .container #form-container .form-item .invalid-day {
+    position: relative;
+    font-size: 1.3vw;
+    font-style: italic;
+    margin-top: 7px;
+    display: none;
+  }
+  .container #form-container .form-item .required-day {
+    position: relative;
+    font-size: 1vw;
+    font-style: italic;
+    margin-top: 7px;
+    display: none;
+  }
+  .container #form-container .form-item .invalid-month {
+    position: relative;
+    font-size: 1.3vw;
+    font-style: italic;
+    margin-top: 7px;
+    display: none;
+  }
+  .container #form-container .form-item .required-month {
+    position: relative;
+    font-size: 1vw;
+    font-style: italic;
+    margin-top: 7px;
+    display: none;
+  }
+  .container #form-container .form-item .invalid-year {
+    position: relative;
+    font-size: 1.3vw;
+    font-style: italic;
+    margin-top: 7px;
+    display: none;
+  }
+  .container #form-container .form-item .required-year {
+    position: relative;
+    font-size: 1vw;
+    font-style: italic;
+    margin-top: 7px;
+    display: none;
+  }
+  .container .arrow {
+    width: 65px;
+    height: 65px;
+    left: 40%;
+    top: -34px;
+  }
+  .container .age-container {
+    font-size: 4rem;
+  }
+}/*# sourceMappingURL=estilos.css.map */

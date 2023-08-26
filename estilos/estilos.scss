@@ -1,0 +1,214 @@
+//Variables
+$purple: hsl(259, 100%, 65%);
+$light-red: hsl(0, 100%, 67%);
+$white: hsl(0, 0%, 100%);
+$off-white: hsl(0, 0%, 94%);
+$light-gray: hsl(0, 0%, 86%);
+$smokey-gray: hsl(0, 1%, 44%);
+$off-black: hsl(0, 0%, 8%);
+
+//Estilos Generales
+:root {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background-color: $off-white;
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@mixin captionStyles($position, $font-size) {
+  position: $position;
+  font-size: $font-size;
+  font-style: italic;
+  margin-top: 7px;
+  display: none;
+}
+
+$list: day, month, year;
+
+//Estilos al Container
+.container {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20vh;
+  padding-top: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5vw 5vw 20vw 5vw;
+  background-color: $white;
+
+  //Estilos al formulario
+  #form-container {
+    width: 90%;
+    padding-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+    border-bottom: thin solid $smokey-gray;
+
+    .form-item {
+      margin-bottom: 40px;
+      .rojo {
+        color: $light-red;
+        border-color: $light-red;
+      }
+
+      @each $i in $list {
+        .invalid-#{$i} {
+          @include captionStyles(absolute, 2vw);
+        }
+        .required-#{$i} {
+          @include captionStyles(absolute, 2vw);
+        }
+      }
+    }
+
+    input[type="text"] {
+      width: 100%;
+      margin-top: 7px;
+      height: 6vw;
+      border-radius: 7px;
+      padding-left: 1.5vw;
+      font-weight: 800;
+      outline-style: none;
+
+      &:focus {
+        border-color: $purple;
+      }
+    }
+
+    label {
+      color: $smokey-gray;
+      letter-spacing: 5px;
+      font-size: 2.5vw;
+    }
+  }
+
+  //Estilos al boton
+  .arrow {
+    position: relative;
+    top: -25px;
+    width: 50px;
+    height: 50px;
+    background-color: $purple;
+    border-radius: 50%;
+    padding: 7px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $off-black;
+    }
+  }
+
+  //Estilos al contendor de la edad
+  .age-container {
+    width: 90%;
+    margin-left: 15px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 13vw;
+    font-style: italic;
+    font-weight: 800;
+
+    .value {
+      color: $purple;
+      font-weight: 800;
+    }
+  }
+}
+
+//Responsive
+
+@media screen and (min-width: 769px) {
+  .container {
+    margin-bottom: 5rem;
+
+    #form-container {
+      .form-item {
+        margin-bottom: 0;
+      }
+    }
+
+    .age-container {
+      font-size: 6rem;
+    }
+  }
+}
+
+@media screen and (min-width: 892px) {
+  .container {
+    width: 60%;
+    margin-top: 10vh;
+
+    //Estilos al formulario
+    #form-container {
+      width: 70%;
+
+      justify-content: flex-start;
+
+      .form-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        align-self: baseline;
+
+        input[type="text"] {
+          width: 70%;
+          height: 6vw;
+          font-size: 2vw;
+        }
+
+        label {
+          font-size: 1rem;
+        }
+
+        @each $i in $list {
+          .invalid-#{$i} {
+            @include captionStyles(relative, 1.3vw);
+          }
+          .required-#{$i} {
+            @include captionStyles(relative, 1vw);
+          }
+        }
+      }
+    }
+
+    //Estilos al boton
+    .arrow {
+      width: 65px;
+      height: 65px;
+      left: 40%;
+      top: -34px;
+    }
+
+    .age-container {
+      font-size: 4rem;
+    }
+  }
+}

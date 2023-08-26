@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/images/letra-j.png">
+  <link rel="stylesheet" type="text/css" href="./estilos/estilos.css" />
+  <title>Calculadora de Edad | Orlando Jara</title>
+</head>
+
+<body>
+  <div class="container">
+    <form id="form-container" method="get" action="#">
+      <div class="form-day form-item">
+        <label class="label-day" for="day">DAY</label>
+        <input type="text" id="day" placeholder="DD" pattern="^\d{2}$" maxlength="2" />
+        <span class="invalid-day">Must be a valid day</span>
+        <span class="required-day">This field is required</span>
+      </div>
+      <div class="form-month form-item">
+        <label class="label-month" for="month">MONTH</label>
+        <input type="text" id="month" placeholder="MM" pattern="^\d{2}$" maxlength="2">
+        <span class="invalid-month">Must be a valid month</span>
+        <span class="required-month">This field is required</span>
+      </div>
+      <div class="form-year form-item">
+        <label class="label-year" for="year">YEAR</label>
+        <input type="text" id="year" placeholder="YYYY" pattern="^\d{4}$" maxlength="4">
+        <span class="invalid-year">Must be a year in the past</span>
+        <span class="required-year">This field is required</span>
+      </div>
+    </form>
+    <a href="#" class="arrow">
+      <img src="./assets/images/icon-arrow.svg" alt="Icono de flecha" />
+    </a>
+    <div class="age-container">
+      <div class="year">
+        <span class="value remaining-years">- -</span>
+        <span>years</span>
+      </div>
+      <div class="month">
+        <span class="value remaining-months">- -</span>
+        <span>months</span>
+      </div>
+      <div class="day">
+        <span class="value remaining-days ">- -</span>
+        <span>days</span>
+      </div>
+    </div>
+  </div>
+  <script src="./main.js" type="module"></script>
+</body>
+
+</html>
